@@ -42,15 +42,19 @@ public class Inventory {
         System.out.println("\n");
     }
 
+    public void updateQuality(){
+        for (Item item : items) {
+            item.updateQuality();
+        }
+    }
+
     public static void main(String[] args){
 
         Inventory inventory = new Inventory();
 
         for(int i = 1; i < 5; i++ ) {
             System.out.println("*** DAY "+i+" ******");
-            for (Item item : inventory.items) {
-                item.updateQuality();
-            }
+            inventory.updateQuality();
             inventory.printInventory();
         }
     }
