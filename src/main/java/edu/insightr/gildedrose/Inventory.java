@@ -2,6 +2,13 @@ package edu.insightr.gildedrose;
 
 public class Inventory {
 
+    public static final String DEXTERITY_VEST = "+5 Dexterity Vest";
+    public static final String AGED_BRIE = "Aged Brie";
+    public static final String ELIXIR_OF_THE_MONGOOSE = "Elixir of the Mongoose";
+    public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
+    public static final String BACKSTAGE_PASSES_TO_CONCERT = "Backstage passes to a TAFKAL80ETC concert";
+    public static final String CONJURED_MANA_CAKE = "Conjured Mana Cake";
+
     private Item[] items;
 
     public Item[] getItems(){
@@ -17,14 +24,13 @@ public class Inventory {
     public Inventory() {
         super();
         items = new Item[]{
-                new Item("+5 Dexterity Vest", 10, 20),
-                new Item("Aged Brie", 2, 0),
-                new Item("Elixir of the Mongoose", 5, 7),
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Item("Conjured Mana Cake", 3, 6)
+                new Item(DEXTERITY_VEST, 10, 20),
+                new Item(AGED_BRIE, 2, 0),
+                new Item(ELIXIR_OF_THE_MONGOOSE, 5, 7),
+                new Item(SULFURAS_HAND_OF_RAGNAROS, 0, 80),
+                new Item(BACKSTAGE_PASSES_TO_CONCERT, 15, 20),
+                new Item(CONJURED_MANA_CAKE, 3, 6)
         };
-
     }
 
     public void printInventory() {
@@ -110,27 +116,27 @@ public class Inventory {
 
         for (int i = 0; i < items.length ; i ++){
 
-            if(items[i].getName() != "Aged Brie"
-                    && items[i].getName() != "Sulfuras, Hand of Ragnaros"
-                    && items[i].getName() != "Backstage passes to a TAFKAL80ETC concert"
-                    && items[i].getName() != "Conjured Mana Cake"){
+            if(items[i].getName() != AGED_BRIE
+                    && items[i].getName() != SULFURAS_HAND_OF_RAGNAROS
+                    && items[i].getName() != BACKSTAGE_PASSES_TO_CONCERT
+                    && items[i].getName() != CONJURED_MANA_CAKE){
 
                 updateItems(i);
             }
 
-            if(items[i].getName().equals("Aged Brie")){
+            if(items[i].getName().equals(AGED_BRIE)){
                 updateAgedBrie(i);
             }
 
-            if(items[i].getName().equals("Conjured Mana Cake")){
+            if(items[i].getName().equals(CONJURED_MANA_CAKE)){
                 updateConjured(i);
             }
 
-            if(items[i].getName().equals("Backstage passes to a TAFKAL80ETC concert")){
+            if(items[i].getName().equals(BACKSTAGE_PASSES_TO_CONCERT)){
                 updateBackstage(i);
             }
 
-            if(items[i].getName().equals("Sulfuras, Hand of Ragnaros")){
+            if(items[i].getName().equals(SULFURAS_HAND_OF_RAGNAROS)){
                 items[i].setSellIn(items[i].getSellIn() -1);
             }
         }
