@@ -1,6 +1,6 @@
 package edu.insightr.gildedrose;
 
-public class Item {
+public abstract class Item implements Ageable {
 
     private String name;
     private int sellIn;
